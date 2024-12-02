@@ -1,0 +1,37 @@
+@startuml
+package "go-fullstack-app" {
+    folder "internal" {
+        folder "api" {
+            [handlers]
+            [middleware]
+            [router]
+        }
+        folder "repository" {
+            [postgresql]
+            [opentsdb]
+            [redis]
+        }
+        folder "messaging" {
+            [rabbitmq]
+        }
+        [config]
+        [models]
+        [service]
+    }
+    folder "web" {
+        folder "templates" {
+            [pages]
+            [partials]
+        }
+        folder "static" {
+            [css]
+            [js]
+            [img]
+        }
+    }
+    folder "pkg" {
+        [logger]
+        [errors]
+    }
+}
+@enduml

@@ -1,0 +1,147 @@
+{
+    "about": {
+      "name": "go-fullstack-app",
+      "version": "1.0.0",
+      "description": "Modern Go application with OpenTSDB, PostgreSQL, Redis, RabbitMQ and web interface",
+      "maintainer": "Your Name",
+      "license": "MIT",
+      "dependencies": {
+        "databases": ["PostgreSQL", "OpenTSDB", "Redis"],
+        "messagebroker": "RabbitMQ",
+        "frontend": "Gin Framework"
+      }
+    },
+    "environment": {
+      "app": {
+        "APP_ENV": "development",
+        "APP_PORT": "8080",
+        "APP_HOST": "localhost"
+      },
+      "postgresql": {
+        "POSTGRES_HOST": "localhost",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": "postgres",
+        "POSTGRES_DB": "appdb"
+      },
+      "opentsdb": {
+        "OPENTSDB_HOST": "localhost",
+        "OPENTSDB_PORT": "4242"
+      },
+      "redis": {
+        "REDIS_HOST": "localhost",
+        "REDIS_PORT": "6379",
+        "REDIS_PASSWORD": "",
+        "REDIS_DB": "0"
+      },
+      "rabbitmq": {
+        "RABBITMQ_HOST": "localhost",
+        "RABBITMQ_PORT": "5672",
+        "RABBITMQ_USER": "guest",
+        "RABBITMQ_PASSWORD": "guest"
+      }
+    },
+    "project_structure": {
+      "/": {
+        "main.go": "Main application entry point",
+        "internal": {
+          "api": {
+            "handlers": {
+                "handler.go": "HTTP request handlers",
+                "home_handler.go": "Home page handler",
+                "about_handler.go": "About page handler",
+                "logs_handler.go": "Logs page handler"
+            },
+            "middleware": {
+              "middleware.go": "HTTP middleware functions"
+            },
+            "router": {
+              "router.go": "Gin router setup"
+            }
+          },
+          "config": {
+            "config.go": "Application configuration"
+          },
+          "models": {
+            "models.go": "Data models"
+          },
+          "repository": {
+            "postgresql": {
+              "repository.go": "PostgreSQL repository implementation"
+            },
+            "opentsdb": {
+              "repository.go": "OpenTSDB repository implementation"
+            },
+            "redis": {
+              "repository.go": "Redis cache implementation"
+            }
+          },
+          "service": {
+            "service.go": "Business logic implementation"
+          },
+          "messaging": {
+            "rabbitmq": {
+              "publisher.go": "RabbitMQ message publisher",
+              "consumer.go": "RabbitMQ message consumer"
+            }
+          }
+        },
+        "pkg": {
+          "logger": {
+            "logger.go": "Logging package"
+          },
+          "errors": {
+            "errors.go": "Custom error definitions"
+          }
+        },
+        "web": {
+            "templates": {
+                "base.html": "Base template with common layout",
+                "pages": {
+                    "home.html": "Home page template extending base.html",
+                    "about.html": "About page template extending base.html",
+                    "logs.html": "Logs page template extending base.html"
+                },
+                "partials": {
+                    "header.html": "Header partial template",
+                    "footer.html": "Footer partial template",
+                    "navigation.html": "Navigation menu partial template"
+                }
+            },
+            "static": {
+                "css": {
+                    "main.css": "Main stylesheet",
+                    "components.css": "Component styles"
+                },
+                "js": {
+                    "main.js": "Main JavaScript file",
+                    "utils.js": "Utility functions"
+                },
+                "img": "Image files"
+            }
+        },
+        "scripts": {
+          "migrations": "Database migration scripts",
+          "deployment": "Deployment scripts"
+        },
+        "configs": {
+          "config.yaml": "Application configuration file"
+        },
+        "docs": {
+          "api.md": "API documentation",
+          "setup.md": "Setup instructions"
+        },
+        "deployments": {
+          "docker-compose.yml": "Docker composition file",
+          "Dockerfile": "Docker build file"
+        },
+        ".env": "Environment variables file",
+        ".gitignore": "Git ignore file",
+        "go.mod": "Go modules file",
+        "go.sum": "Go modules checksum file",
+        "Makefile": "Build automation",
+        "README.md": "Project documentation"
+      }
+    }
+  }
+  

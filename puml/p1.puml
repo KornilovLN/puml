@@ -1,0 +1,20 @@
+@startuml
+package "go-fullstack-app" {
+    component [Web Interface] as web
+    component [API Layer] as api
+    component [Service Layer] as service
+    component [Repository Layer] as repo
+    database "PostgreSQL" as pg
+    database "OpenTSDB" as tsdb
+    database "Redis" as redis
+    queue "RabbitMQ" as rmq
+
+    web --> api
+    api --> service
+    service --> repo
+    repo --> pg
+    repo --> tsdb
+    repo --> redis
+    service <--> rmq
+}
+@enduml

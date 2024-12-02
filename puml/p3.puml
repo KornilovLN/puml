@@ -1,0 +1,26 @@
+@startuml
+node "Application Server" {
+    [Go Application]
+}
+
+database "PostgreSQL" {
+    [User Data]
+}
+
+database "OpenTSDB" {
+    [Metrics]
+}
+
+database "Redis" {
+    [Cache]
+}
+
+queue "RabbitMQ" {
+    [Message Queue]
+}
+
+[Go Application] --> [User Data]
+[Go Application] --> [Metrics]
+[Go Application] --> [Cache]
+[Go Application] <--> [Message Queue]
+@enduml
